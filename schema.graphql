@@ -1,0 +1,47 @@
+# Get information on how your account is doing overall
+# Need to add business logic so that It is only for the past year
+
+# This mean I need to get the date of each event which will be in the header
+# and exclude it from calculation if over a year old
+
+type Account @entity {
+  id: ID! # AccountId / Account Hash
+  
+  totalRewards: BigInt!
+  
+  totalSlashes: BigInt!
+  
+  accountTotal: BigInt! # Total Rewards - Total Slashes
+
+  currentStake: BigInt!
+
+  stakingResults: [StakingResult]!
+
+  apr: String!
+}
+
+type StakingResult @jsonField {
+  date: Date!
+  isReward: Boolean!  
+  amount: String!
+}
+
+# in early stage of kusama, some validators didn't need to bond to start staking
+type NoBondRecordAccount @entity {
+  id: ID! # AccountId / Account Hash
+  firstRewardAt: Int!
+}
+
+type StakingReward @entity{
+  id: ID! # AccountId / Account Hash
+  address: String!
+  balance: BigInt!
+  date: Date!
+}
+
+type StakingSlash @entity{
+  id: ID! # AccountId / Account Hash
+  address: String!
+  balance: BigInt!
+  date: Date!
+}

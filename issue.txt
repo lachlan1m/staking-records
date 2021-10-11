@@ -1,0 +1,5 @@
+ERROR failed to index block at height 331072 handleReward() TypeError: Do not know how to serialize a BigInt
+
+When trying to put into json can't serialize big int
+
+TODO: I should seperate up "account" schema 
