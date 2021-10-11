@@ -18,7 +18,6 @@ function createAccountRecord(accountId: string): Account {
 function calculateAPR(acc: Account, event: SubstrateEvent): string {
     const epochSlots = api.consts.babe.epochDuration.toNumber();    
     const epochHours = epochSlots / 600  //how many hours in 1 epoch
-    logger.info
     const epochsYear = (8760 / epochHours) //how many epochs in a year
 
     const dateBound = event.block.timestamp;
