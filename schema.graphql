@@ -1,9 +1,3 @@
-# Get information on how your account is doing overall
-# Need to add business logic so that It is only for the past year
-
-# This mean I need to get the date of each event which will be in the header
-# and exclude it from calculation if over a year old
-
 type Account @entity {
   id: ID! # AccountId / Account Hash
   

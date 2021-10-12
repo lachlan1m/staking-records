@@ -19,6 +19,11 @@ dataSources:
           filter:
             module: staking
             method: Bonded
+        - handler: handleUnbond
+          kind: substate/EventHandler
+          filter:
+            module: staking
+            method: Unbonded
         - handler: handleReward
           kind: substrate/EventHandler
           filter:
