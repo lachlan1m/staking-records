@@ -20,7 +20,7 @@ dataSources:
             module: staking
             method: Bonded
         - handler: handleUnbond
-          kind: substate/EventHandler
+          kind: substrate/EventHandler
           filter:
             module: staking
             method: Unbonded
